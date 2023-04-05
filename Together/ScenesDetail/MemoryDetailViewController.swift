@@ -9,6 +9,8 @@ import UIKit
 
 final class MemoryDetailViewController: UIViewController {
     
+    var receivedText: String = ""
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var selectImageView: UIView!
     @IBOutlet weak var memoryTextField: UITextField!
@@ -50,6 +52,14 @@ final class MemoryDetailViewController: UIViewController {
     }
     
     @IBAction func savedButton(_ sender: Any) {
+        if let text = memoryTextField.text {
+            if let vc1 = presentingViewController as? AddMemoryViewController {
+                dismiss(animated: true, completion: nil)
+                vc1.infoFromVC2 = text
+                vc1.infoLabel.text = text
+            }
+         }
+            dismiss(animated: true, completion: nil)
         
     }
     

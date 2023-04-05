@@ -8,7 +8,11 @@
 import UIKit
 
 final class AddMemoryViewController: UIViewController {
-
+    
+    var infoFromVC2: String?
+    
+    
+    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var backgroundImage1: UIImageView!
     @IBOutlet weak var markerView: UIView!
     @IBOutlet weak var markerImage: UIImageView!
@@ -17,6 +21,7 @@ final class AddMemoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+
     }
     
     private func configView() {
@@ -30,11 +35,9 @@ final class AddMemoryViewController: UIViewController {
     }
     
     @IBAction func markerTapped(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemoryDetailViewController") as! MemoryDetailViewController
-        vc.modalPresentationStyle = .fullScreen
-
-        self.present(vc, animated: true, completion: nil)
-//        self.dismiss(animated: true, completion: nil)
+        let vc2 = storyboard?.instantiateViewController(withIdentifier: "MemoryDetailViewController") as! MemoryDetailViewController
+        vc2.modalPresentationStyle = .fullScreen
+        present(vc2, animated: true, completion: nil)
 
     }
 }

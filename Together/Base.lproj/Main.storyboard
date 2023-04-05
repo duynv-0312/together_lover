@@ -60,18 +60,27 @@
                                     <constraint firstItem="edV-Ov-tzM" firstAttribute="top" secondItem="R2o-Uf-gmN" secondAttribute="top" id="lGL-ZB-Bw3"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rs-EL-7Vz">
+                                <rect key="frame" x="100" y="169" width="284" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t64-ZU-Szu"/>
                         <color key="backgroundColor" systemColor="systemBrownColor"/>
                         <constraints>
                             <constraint firstItem="Z4f-fL-RFn" firstAttribute="top" secondItem="t64-ZU-Szu" secondAttribute="top" id="CrX-kX-m7n"/>
                             <constraint firstItem="iCc-5a-HRE" firstAttribute="trailing" secondItem="t64-ZU-Szu" secondAttribute="trailing" id="E0I-pJ-08V"/>
+                            <constraint firstItem="2rs-EL-7Vz" firstAttribute="top" secondItem="t64-ZU-Szu" secondAttribute="top" constant="110" id="Ih4-VG-zzK"/>
                             <constraint firstItem="iCc-5a-HRE" firstAttribute="leading" secondItem="t64-ZU-Szu" secondAttribute="leading" id="Isd-8R-sga"/>
                             <constraint firstItem="iCc-5a-HRE" firstAttribute="top" secondItem="8rU-w8-Om5" secondAttribute="topMargin" constant="-59" id="LqY-xK-JfL"/>
                             <constraint firstAttribute="bottom" secondItem="iCc-5a-HRE" secondAttribute="bottom" id="ZNh-pb-uqZ"/>
                             <constraint firstItem="Z4f-fL-RFn" firstAttribute="centerX" secondItem="8rU-w8-Om5" secondAttribute="centerX" id="bQG-6Z-0TE"/>
+                            <constraint firstItem="2rs-EL-7Vz" firstAttribute="leading" secondItem="t64-ZU-Szu" secondAttribute="leading" constant="100" id="brg-Px-Uy9"/>
                             <constraint firstItem="iCc-5a-HRE" firstAttribute="centerX" secondItem="Z4f-fL-RFn" secondAttribute="centerX" id="dUU-TP-tdR"/>
                             <constraint firstItem="Z4f-fL-RFn" firstAttribute="centerX" secondItem="8rU-w8-Om5" secondAttribute="centerX" id="iId-QC-SvK"/>
+                            <constraint firstItem="t64-ZU-Szu" firstAttribute="trailing" secondItem="2rs-EL-7Vz" secondAttribute="trailing" constant="9" id="kaF-FY-oBU"/>
                             <constraint firstItem="t64-ZU-Szu" firstAttribute="trailing" secondItem="R2o-Uf-gmN" secondAttribute="trailing" constant="30" id="nMI-h1-lY2"/>
                             <constraint firstItem="Z4f-fL-RFn" firstAttribute="top" secondItem="t64-ZU-Szu" secondAttribute="top" id="uEd-np-wsU"/>
                             <constraint firstItem="iCc-5a-HRE" firstAttribute="leading" secondItem="t64-ZU-Szu" secondAttribute="leading" id="vit-Np-N7X"/>
@@ -82,6 +91,7 @@
                     <connections>
                         <outlet property="addLabel" destination="Z4f-fL-RFn" id="7a4-Ls-acz"/>
                         <outlet property="backgroundImage1" destination="iCc-5a-HRE" id="5VM-PL-Mqz"/>
+                        <outlet property="infoLabel" destination="2rs-EL-7Vz" id="a7q-tM-Sdo"/>
                         <outlet property="markerImage" destination="Na7-IO-Hfh" id="ONv-pF-rGQ"/>
                         <outlet property="markerView" destination="R2o-Uf-gmN" id="7D4-Wy-vpq"/>
                     </connections>
@@ -299,7 +309,7 @@
                         <outlet property="datePickerView" destination="NOy-SI-Xb1" id="sjd-fS-fuI"/>
                         <outlet property="dateView" destination="rDv-7v-12u" id="vOM-uE-ti8"/>
                         <outlet property="imageView" destination="05N-cN-pt0" id="JsH-Zy-Akq"/>
-                        <outlet property="memoryTextField" destination="Ci7-0n-0Ql" id="eFp-6t-jbk"/>
+                        <outlet property="memoryTextField" destination="Ci7-0n-0Ql" id="r7I-bM-Bk6"/>
                         <outlet property="numberOfDaysLabel" destination="o4i-LI-nfk" id="rtY-Xh-SdW"/>
                         <outlet property="numberOfYearsLabel" destination="UNT-xQ-g8l" id="fo7-yE-boy"/>
                         <outlet property="okButton" destination="gc1-kf-19h" id="bsx-RA-ZVG"/>
@@ -689,19 +699,19 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rc-od-uFM">
-                                                <rect key="frame" x="161.66666666666666" y="210" width="6.6666666666666572" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rc-od-uFM">
+                                                <rect key="frame" x="160.66666666666666" y="210" width="9" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoI-uO-BO2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoI-uO-BO2">
                                                 <rect key="frame" x="226" y="210" width="8" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIg-Sf-0Mq">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIg-Sf-0Mq">
                                                 <rect key="frame" x="290.66666666666669" y="210" width="9" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -911,12 +921,14 @@
                         <outlet property="dateLabel" destination="zOd-lb-2Ax" id="rjL-cS-v44"/>
                         <outlet property="datePicker" destination="SMK-M7-j19" id="3b8-0V-yeF"/>
                         <outlet property="datePickerView" destination="0YO-cA-3Qr" id="wzv-kf-Z9t"/>
+                        <outlet property="dayLabel" destination="EIg-Sf-0Mq" id="pfW-aO-j7K"/>
                         <outlet property="firstBirthday" destination="H0h-Mf-7yo" id="haH-N7-45r"/>
                         <outlet property="genderImage1" destination="Cx7-YJ-Rt6" id="koa-Ic-Ndk"/>
                         <outlet property="genderImage2" destination="ihD-H3-p6d" id="L5w-LP-qSc"/>
                         <outlet property="heartButton" destination="eBo-cD-cIM" id="lEz-5Q-a55"/>
                         <outlet property="heartImage" destination="DDi-H6-WdV" id="yAh-mV-bW0"/>
                         <outlet property="heartView" destination="pfQ-zH-7uf" id="FYI-qj-5dw"/>
+                        <outlet property="monthLabel" destination="4Rc-od-uFM" id="jLD-pA-sPb"/>
                         <outlet property="nameImage1" destination="eKK-fp-6aj" id="7Ky-Oj-BV3"/>
                         <outlet property="nameImage2" destination="lB1-DN-ysV" id="yEn-Sg-TfT"/>
                         <outlet property="namePerson1" destination="gKC-wf-WIN" id="cRM-bQ-ucn"/>
@@ -928,6 +940,8 @@
                         <outlet property="personImageView1" destination="fdw-I8-2yr" id="Jau-SE-luf"/>
                         <outlet property="personImageView2" destination="DVb-UZ-hd9" id="2aJ-1q-6mL"/>
                         <outlet property="secondBirthday" destination="nt8-NP-uPn" id="99k-59-4nD"/>
+                        <outlet property="weekLabel" destination="ZoI-uO-BO2" id="mRk-zc-VZI"/>
+                        <outlet property="yearLabel" destination="Cpl-mQ-CsV" id="7fs-q2-Hg7"/>
                         <outlet property="zodiacButton1" destination="R6T-Py-CSv" id="P57-eH-L6V"/>
                         <outlet property="zodiacButton2" destination="Bup-87-929" id="CRA-a6-i7Q"/>
                         <outlet property="zodiacPerson1" destination="6oy-LY-8W2" id="Hn7-9n-NLF"/>

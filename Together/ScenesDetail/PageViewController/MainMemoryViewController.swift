@@ -42,9 +42,17 @@ class MainMemoryViewController: UIViewController {
     @IBOutlet weak var datePickerView: UIView!
     @IBOutlet weak var dateButton: UIButton!
     
+    
+    @IBOutlet weak var yearLabel: UILabel!
+    
+    @IBOutlet weak var monthLabel: UILabel!
+    
+    
     @IBOutlet weak var firstBirthday: UILabel!
     @IBOutlet weak var secondBirthday: UILabel!
     
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet weak var heartButton: UIButton!
     var name1: String = ""
     var name2: String = ""
@@ -125,7 +133,27 @@ class MainMemoryViewController: UIViewController {
 //        let month = components.month ?? 0
 //        let week = components.weekOfYear ?? 0
 //        let day = components.day ?? 0
-
+        
+        let selectedDate1 = datePicker.date
+        let (years, months, weeks, days) = calculateTimeSinceSelectedDate(selectedDate1: selectedDate1)
+        yearLabel.text = "\(years)"
+        monthLabel.text = "\(months)"
+        weekLabel.text = "\(weeks)"
+        dayLabel.text = "\(days)"
+        
+    }
+    
+    func calculateTimeSinceSelectedDate(selectedDate1: Date) -> (Int, Int, Int, Int) {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .weekOfYear, .day], from: selectedDate1, to: currentDate)
+        
+        let years = components.year ?? 0
+        let months = components.month ?? 0
+        let weeks = components.weekOfYear ?? 0
+        let days = components.day ?? 0
+        
+        return (years, months, weeks, days)
     }
     
     @IBAction func selectDateButton(_ sender: Any) {
@@ -139,6 +167,7 @@ class MainMemoryViewController: UIViewController {
           let days = calendar.dateComponents([.day], from: startOfDay, to: currentDate)
           return days.day ?? 0
       }
+    
     func calculateZodiac(date: Date) -> String {
         let calendar = Calendar.current
         let day = calendar.component(.day, from: date)
@@ -172,31 +201,6 @@ class MainMemoryViewController: UIViewController {
         }
     }
       
-      @objc func okButtonTapped() {
-          // Get the selected date
-          let dateFormatter = DateFormatter()
-          dateFormatter.dateFormat = "dd/MM/yyyy"
-          let selectedDate = dateFormatter.date(from: dateLabel.text ?? "") ?? Date()
-          
-          // Update the date label
-          dateLabel.text = dateFormatter.string(from: selectedDate)
-          
-          // Calculate the number of days from selected date to current date
-          let numberOfDays = numberOfDays(from: selectedDate)
-          
-          // Update the label showing the number of days
-          numberOfDaysLabel.text = "\(numberOfDays) days"
-   
-          
-          
-          // Hide the date picker view
-          datePickerView.isHidden = true
-          
-      }
-      
-      // ... các hàm và đoạn mã khác của bạn ở đây
-    
-    
     @IBAction func buttonTapped(_ sender: Any) {
         let images = [
             UIImage(named: "heart"),
@@ -233,7 +237,6 @@ class MainMemoryViewController: UIViewController {
     @IBAction func settingButton(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingViewController") as! SettingViewController
         vc.modalPresentationStyle = .fullScreen
-        
         self.present(vc, animated: true, completion: nil)
     }
     

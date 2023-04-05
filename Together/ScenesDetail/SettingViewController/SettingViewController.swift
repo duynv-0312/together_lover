@@ -9,7 +9,7 @@ import UIKit
 
 class SettingViewController: UIViewController {
     
-    let data = ["Chọn ngày bắt đầu", "Hình nền", "Font chữ", "Màu ứng dụng", "", "12 Cung hoàng đạo", "Phiên bản Plus"," ", "Đánh giá ứng dụng", "", "Chính sách bảo mật", "Phiên bản"]
+    let data = ["Hình nền", "Ngôn ngữ", "", "12 Cung hoàng đạo", "Phiên bản Plus"," ", "Đánh giá ứng dụng", "", "Chính sách bảo mật", "Phiên bản"]
 
 
     @IBOutlet weak var tableView: UITableView!
