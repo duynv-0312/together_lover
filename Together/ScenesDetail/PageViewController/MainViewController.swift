@@ -19,7 +19,6 @@ final class MainViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-
     }
     
     required init(coder: NSCoder) {
@@ -29,7 +28,6 @@ final class MainViewController: UIPageViewController {
     private func configView() {
         self.delegate = self
         self.dataSource = self
-        
         setViewControllers([subViewControllers[0]], direction: .forward, animated: true, completion: nil)
     }
     

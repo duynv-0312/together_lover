@@ -9,8 +9,6 @@ import UIKit
 
 final class MemoryDetailViewController: UIViewController {
     
-    var receivedText: String = ""
-
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var selectImageView: UIView!
     @IBOutlet weak var memoryTextField: UITextField!
@@ -27,7 +25,6 @@ final class MemoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-
     }
     
     private func configView() {
@@ -42,9 +39,8 @@ final class MemoryDetailViewController: UIViewController {
         
         datePickerView.layer.cornerRadius = 12
         datePicker.datePickerMode = .date
-              // Hide the date picker view
-        datePickerView.isHidden = true
         
+        datePickerView.isHidden = true
     }
     
     @IBAction func closeButton(_ sender: Any) {
@@ -60,11 +56,9 @@ final class MemoryDetailViewController: UIViewController {
             }
          }
             dismiss(animated: true, completion: nil)
-        
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        // Hide the date picker view
         datePickerView.isHidden = true
     }
     
@@ -79,7 +73,6 @@ final class MemoryDetailViewController: UIViewController {
          datePickerView.isHidden = true
         let number = Date.dates(from: datePicker.date, to: Date()).count
         numberOfDaysLabel.text = "\(number)"
-
     }
     
     @IBAction func selectDateButton(_ sender: Any) {
@@ -99,24 +92,19 @@ final class MemoryDetailViewController: UIViewController {
           let dateFormatter = DateFormatter()
           dateFormatter.dateFormat = "dd/MM/yyyy"
           let selectedDate = dateFormatter.date(from: dateLabel.text ?? "") ?? Date()
-          
           // Update the date label
           dateLabel.text = dateFormatter.string(from: selectedDate)
           
           // Calculate the number of days from selected date to current date
           let numberOfDays = numberOfDays(from: selectedDate)
-          
           // Update the label showing the number of days
           numberOfDaysLabel.text = "\(numberOfDays) days"
           
           // Hide the date picker view
           datePickerView.isHidden = true
       }
-      
-      // ... các hàm và đoạn mã khác của bạn ở đây
     
     @IBAction func selectImageButton(_ sender: Any) {
-        
         let imagePicker = UIImagePickerController()
          imagePicker.delegate = self
          imagePicker.allowsEditing = false

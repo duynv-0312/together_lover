@@ -140,7 +140,6 @@ class MainMemoryViewController: UIViewController {
         monthLabel.text = "\(months)"
         weekLabel.text = "\(weeks)"
         dayLabel.text = "\(days)"
-        
     }
     
     func calculateTimeSinceSelectedDate(selectedDate1: Date) -> (Int, Int, Int, Int) {

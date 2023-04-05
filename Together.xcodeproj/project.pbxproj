@@ -13,8 +13,6 @@
 		04E0282929D5D9080089FA2D /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0282829D5D9080089FA2D /* DatePicker.swift */; };
 		04E0282C29D5D9310089FA2D /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E0282B29D5D9310089FA2D /* DatePicker.xib */; };
 		04E0283729D5ED4A0089FA2D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0283629D5ED4A0089FA2D /* SettingViewController.swift */; };
-		04E0284229D5EDC10089FA2D /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0284029D5EDC10089FA2D /* ThirdTableViewCell.swift */; };
-		04E0284329D5EDC10089FA2D /* ThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E0284129D5EDC10089FA2D /* ThirdTableViewCell.xib */; };
 		04F67D8229D5402C00A25E4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F67D8129D5402C00A25E4A /* AppDelegate.swift */; };
 		04F67D8429D5402C00A25E4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F67D8329D5402C00A25E4A /* SceneDelegate.swift */; };
 		04F67D8929D5402C00A25E4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F67D8729D5402C00A25E4A /* Main.storyboard */; };
@@ -34,8 +32,6 @@
 		04E0282829D5D9080089FA2D /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		04E0282B29D5D9310089FA2D /* DatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePicker.xib; sourceTree = "<group>"; };
 		04E0283629D5ED4A0089FA2D /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		04E0284029D5EDC10089FA2D /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
-		04E0284129D5EDC10089FA2D /* ThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdTableViewCell.xib; sourceTree = "<group>"; };
 		04F67D7E29D5402C00A25E4A /* Together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F67D8129D5402C00A25E4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F67D8329D5402C00A25E4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,8 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				04E0283629D5ED4A0089FA2D /* SettingViewController.swift */,
-				04E0284029D5EDC10089FA2D /* ThirdTableViewCell.swift */,
-				04E0284129D5EDC10089FA2D /* ThirdTableViewCell.xib */,
 			);
 			path = SettingViewController;
 			sourceTree = "<group>";
@@ -196,7 +190,6 @@
 				04F67D9129D5402D00A25E4A /* LaunchScreen.storyboard in Resources */,
 				04F67D8E29D5402D00A25E4A /* Assets.xcassets in Resources */,
 				04F67D8929D5402C00A25E4A /* Main.storyboard in Resources */,
-				04E0284329D5EDC10089FA2D /* ThirdTableViewCell.xib in Resources */,
 				04E0282C29D5D9310089FA2D /* DatePicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +213,6 @@
 				04F67D8C29D5402C00A25E4A /* Together.xcdatamodeld in Sources */,
 				04F67D9929D540C200A25E4A /* MainViewController.swift in Sources */,
 				0410A6E929D6DECC00C0C679 /* Date.swift in Sources */,
-				04E0284229D5EDC10089FA2D /* ThirdTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
