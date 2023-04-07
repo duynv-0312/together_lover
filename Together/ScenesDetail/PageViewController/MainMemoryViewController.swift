@@ -7,7 +7,10 @@
 
 import UIKit
 
-class MainMemoryViewController: UIViewController {
+class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    let imagePicker = UIImagePickerController()
+
     
     @IBOutlet weak var backgroundImage2: UIImageView!
     
@@ -63,6 +66,8 @@ class MainMemoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+        imagePicker.delegate = self
+
     }
     
     private func configView() {
@@ -94,27 +99,28 @@ class MainMemoryViewController: UIViewController {
         zodiacPerson2.text = "Nhân mã"
 
 
-        heartImage.image = UIImage(named: "heart")//
+//        heartImage.image = UIImage(named: "heart")//
         datePickerView.layer.cornerRadius = 12
         datePicker.datePickerMode = .date
         datePickerView.isHidden = true
 
-
-        guard let url = Bundle.main.url(forResource: "gifff", withExtension: "gif") else {
-            return
+        if let imageUrl = Bundle.main.url(forResource: "giphy", withExtension: "gif") {
+           do {
+               let imageData = try Data(contentsOf: imageUrl)
+               let animatedImage = UIImage.gifImageWithData(data: imageData)
+               heartImage.image = animatedImage
+           } catch {
+               print("Error loading gif image")
+           }
         }
-        guard let gifData = try? Data(contentsOf: url) else { return }
-        let gifImage = UIImage.gifImageWithData(data: gifData)
-        heartImage.image = gifImage
-
     }
+    
+    
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         // Hide the date picker view
         datePickerView.isHidden = true
-
     }
-    
     
     @IBAction func okButtonTapped(_ sender: Any) {
         // Get the selected date
@@ -127,13 +133,7 @@ class MainMemoryViewController: UIViewController {
         
         let number = Date.dates(from: datePicker.date, to: Date()).count
         numberOfDaysLabel.text = "\(number)"
-//        let components = number.dateComponents([.year, .month, .weekOfYear, .day], from: date)
-//
-//        let year = components.year ?? 0
-//        let month = components.month ?? 0
-//        let week = components.weekOfYear ?? 0
-//        let day = components.day ?? 0
-        
+
         let selectedDate1 = datePicker.date
         let (years, months, weeks, days) = calculateTimeSinceSelectedDate(selectedDate1: selectedDate1)
         yearLabel.text = "\(years)"
@@ -240,58 +240,75 @@ class MainMemoryViewController: UIViewController {
     }
     
     @IBAction func changedPerson1(_ sender: Any) {
-        let imagePicker1 = UIImagePickerController()
-         imagePicker1.delegate = self
-         imagePicker1.allowsEditing = false
-         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-         let cameraAction = UIAlertAction(title: "Take Photo", style: .default) { (action) in
-             imagePicker1.sourceType = .camera
-             self.present(imagePicker1, animated: true, completion: nil)
-         }
-        
-         let photoLibraryAction = UIAlertAction(title: "Choose from Library", style: .default) { (action) in
-             imagePicker1.sourceType = .photoLibrary
-             self.present(imagePicker1, animated: true, completion: nil)
-         }
-        
-         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-         alertController.addAction(cameraAction)
-         alertController.addAction(photoLibraryAction)
-         alertController.addAction(cancelAction)
-         if let popoverController = alertController.popoverPresentationController {
-             popoverController.sourceView = sender as? UIView
-             popoverController.sourceRect = (sender as AnyObject).bounds
-         }
-         present(alertController, animated: true, completion: nil)
-        
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+              alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                  self.openCamera()
+              }))
+
+              alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+                  self.openGallery(forImageView: self.personImage1)
+              }))
+
+              alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+              self.present(alert, animated: true)
     }
     
     @IBAction func changedPerson2(_ sender: Any) {
-        let imagePicker2 = UIImagePickerController()
-         imagePicker2.delegate = self
-         imagePicker2.allowsEditing = false
-         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-         let cameraAction = UIAlertAction(title: "Take Photo", style: .default) { (action) in
-             imagePicker2.sourceType = .camera
-             self.present(imagePicker2, animated: true, completion: nil)
-         }
-        
-         let photoLibraryAction = UIAlertAction(title: "Choose from Library", style: .default) { (action) in
-             imagePicker2.sourceType = .photoLibrary
-             self.present(imagePicker2, animated: true, completion: nil)
-         }
-        
-         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-         alertController.addAction(cameraAction)
-         alertController.addAction(photoLibraryAction)
-         alertController.addAction(cancelAction)
-         if let popoverController = alertController.popoverPresentationController {
-             popoverController.sourceView = sender as? UIView
-             popoverController.sourceRect = (sender as AnyObject).bounds
-         }
-         present(alertController, animated: true, completion: nil)
-        
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+           alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+               self.openCamera()
+           }))
+
+           alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+               self.openGallery(forImageView: self.personImage2)
+           }))
+
+           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+           self.present(alert, animated: true)
+
     }
+    
+    func openCamera() {
+          if UIImagePickerController.isSourceTypeAvailable(.camera) {
+              imagePicker.sourceType = .camera
+              present(imagePicker, animated: true, completion: nil)
+          }
+          else {
+              let alert = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+              alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+              present(alert, animated: true, completion: nil)
+          }
+      }
+      
+      func openGallery(forImageView imageView: UIImageView) {
+          imagePicker.sourceType = .photoLibrary
+          imagePicker.allowsEditing = true
+          present(imagePicker, animated: true, completion: {
+              self.personImage1 = imageView
+          })
+      }
+      
+      func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+          
+          if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+              personImage1.image = nil
+              personImage2.image = nil
+              personImage1.contentMode = .scaleAspectFit
+              personImage2.contentMode = .scaleAspectFit
+              
+              if personImage1 == self.personImage1 {
+                  personImage1.image = pickedImage
+              } else {
+                  personImage2.image = pickedImage
+              }
+          }
+          
+          dismiss(animated: true, completion: nil)
+      }
+      
+      func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+          dismiss(animated: true, completion: nil)
+      }
     
     @IBAction func changedName1(_ sender: Any) {
         let alertController = UIAlertController(title: "Enter Name", message: nil, preferredStyle: .alert)
@@ -424,22 +441,40 @@ extension UIImage {
 }
 
 
-extension MainMemoryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage1 = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            personImage1.contentMode = .scaleToFill
-            personImage1.image = pickedImage1
-        }
-        
-        if let pickedImage2 = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                personImage2.contentMode = .scaleToFill
-                personImage2.image = pickedImage2
+//extension MainMemoryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        if let pickedImage1 = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+//            personImage1.contentMode = .scaleToFill
+//            personImage1.image = pickedImage1
+//        }
+//
+//        if let pickedImage2 = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+//                personImage2.contentMode = .scaleToFill
+//                personImage2.image = pickedImage2
+//
+//        }
+//        dismiss(animated: true, completion: nil)
+//    }
+//
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        dismiss(animated: true, completion: nil)
+//    }
+//}
 
-        }
-        dismiss(animated: true, completion: nil)
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-}
+//extension MainMemoryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        if let image = info[.editedImage] as? UIImage {
+//            picker.dismiss(animated: true, completion: nil)
+//            // Hiển thị ảnh được chọn lên imageView tương ứng
+//            if picker.sourceType == .camera {
+//                personImage1.image = image
+//            } else {
+//                personImage2.image = image
+//            }
+//        }
+//    }
+//
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        picker.dismiss(animated: true, completion: nil)
+//    }
+//}

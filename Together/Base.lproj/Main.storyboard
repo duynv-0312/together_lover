@@ -254,25 +254,11 @@
                                     <constraint firstAttribute="trailing" secondItem="ctJ-gw-690" secondAttribute="trailing" constant="5" id="vSd-le-Ef7"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4i-LI-nfk">
-                                <rect key="frame" x="175.66666666666666" y="132" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNT-xQ-g8l">
-                                <rect key="frame" x="175.66666666666666" y="163" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vsD-J1-chr"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ci7-0n-0Ql" firstAttribute="leading" secondItem="vsD-J1-chr" secondAttribute="leading" constant="60" id="2cK-8A-eZT"/>
-                            <constraint firstItem="UNT-xQ-g8l" firstAttribute="top" secondItem="o4i-LI-nfk" secondAttribute="bottom" constant="10" id="6H4-Tv-3ud"/>
-                            <constraint firstItem="o4i-LI-nfk" firstAttribute="centerX" secondItem="SXA-aa-wDm" secondAttribute="centerX" id="6ZV-l5-ucN"/>
                             <constraint firstItem="NOy-SI-Xb1" firstAttribute="leading" secondItem="vsD-J1-chr" secondAttribute="leading" constant="60" id="BEM-fF-10G"/>
                             <constraint firstItem="0by-2n-9PP" firstAttribute="top" secondItem="Ci7-0n-0Ql" secondAttribute="bottom" constant="8" id="BKv-T6-hvC"/>
                             <constraint firstItem="ADW-9q-pZU" firstAttribute="centerY" secondItem="XzM-xY-CIT" secondAttribute="centerY" id="Erf-lr-zDY"/>
@@ -286,7 +272,6 @@
                             <constraint firstItem="vsD-J1-chr" firstAttribute="trailing" secondItem="NOy-SI-Xb1" secondAttribute="trailing" constant="60" id="VNi-Hn-hTa"/>
                             <constraint firstItem="Pwy-jc-N34" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ADW-9q-pZU" secondAttribute="trailing" constant="8" symbolic="YES" id="Ww7-uZ-vRO"/>
                             <constraint firstItem="vsD-J1-chr" firstAttribute="trailing" secondItem="Ci7-0n-0Ql" secondAttribute="trailing" constant="60" id="X2I-3U-Wsv"/>
-                            <constraint firstItem="o4i-LI-nfk" firstAttribute="top" secondItem="ADW-9q-pZU" secondAttribute="bottom" constant="45" id="YRZ-W0-qs6"/>
                             <constraint firstItem="NOy-SI-Xb1" firstAttribute="top" secondItem="6fE-vv-7bV" secondAttribute="bottom" constant="-30" id="cHf-3o-udh"/>
                             <constraint firstItem="ADW-9q-pZU" firstAttribute="centerX" secondItem="SXA-aa-wDm" secondAttribute="centerX" id="cSt-mq-Muy"/>
                             <constraint firstItem="XzM-xY-CIT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vsD-J1-chr" secondAttribute="leading" id="ivr-fx-Cau"/>
@@ -295,7 +280,6 @@
                             <constraint firstItem="vsD-J1-chr" firstAttribute="trailing" secondItem="rDv-7v-12u" secondAttribute="trailing" constant="60" id="pj9-6V-OlA"/>
                             <constraint firstItem="rDv-7v-12u" firstAttribute="leading" secondItem="vsD-J1-chr" secondAttribute="leading" constant="60" id="rdE-0e-x7G"/>
                             <constraint firstItem="stw-pc-pMh" firstAttribute="top" secondItem="6fE-vv-7bV" secondAttribute="bottom" constant="12" id="uIE-ES-ac9"/>
-                            <constraint firstItem="UNT-xQ-g8l" firstAttribute="centerX" secondItem="SXA-aa-wDm" secondAttribute="centerX" id="vUc-78-WZD"/>
                             <constraint firstItem="rDv-7v-12u" firstAttribute="top" secondItem="0by-2n-9PP" secondAttribute="bottom" constant="16" id="yFz-tT-Nqt"/>
                             <constraint firstItem="0by-2n-9PP" firstAttribute="centerX" secondItem="SXA-aa-wDm" secondAttribute="centerX" id="zH4-le-4xX"/>
                             <constraint firstItem="vsD-J1-chr" firstAttribute="trailing" secondItem="Pwy-jc-N34" secondAttribute="trailing" constant="16" id="zma-lc-Puw"/>
@@ -310,8 +294,6 @@
                         <outlet property="dateView" destination="rDv-7v-12u" id="vOM-uE-ti8"/>
                         <outlet property="imageView" destination="05N-cN-pt0" id="JsH-Zy-Akq"/>
                         <outlet property="memoryTextField" destination="Ci7-0n-0Ql" id="r7I-bM-Bk6"/>
-                        <outlet property="numberOfDaysLabel" destination="o4i-LI-nfk" id="rtY-Xh-SdW"/>
-                        <outlet property="numberOfYearsLabel" destination="UNT-xQ-g8l" id="fo7-yE-boy"/>
                         <outlet property="okButton" destination="gc1-kf-19h" id="bsx-RA-ZVG"/>
                         <outlet property="selectImageView" destination="stw-pc-pMh" id="5p9-m3-F8W"/>
                     </connections>

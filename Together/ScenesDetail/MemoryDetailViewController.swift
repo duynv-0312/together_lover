@@ -15,8 +15,6 @@ final class MemoryDetailViewController: UIViewController {
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     
-    @IBOutlet weak var numberOfYearsLabel: UILabel!
-    @IBOutlet weak var numberOfDaysLabel: UILabel!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -71,38 +69,38 @@ final class MemoryDetailViewController: UIViewController {
          dateLabel.text = selectedDate
          // Hide the date picker view
          datePickerView.isHidden = true
-        let number = Date.dates(from: datePicker.date, to: Date()).count
-        numberOfDaysLabel.text = "\(number)"
+//        let number = Date.dates(from: datePicker.date, to: Date()).count
+//        numberOfDaysLabel.text = "\(number)"
     }
     
     @IBAction func selectDateButton(_ sender: Any) {
         datePickerView.isHidden = false
     }
     
-    func numberOfDays(from date: Date) -> Int {
-          let calendar = Calendar.current
-          let currentDate = Date()
-          let startOfDay = calendar.startOfDay(for: date)
-          let days = calendar.dateComponents([.day], from: startOfDay, to: currentDate)
-          return days.day ?? 0
-      }
-      
-      @objc func okButtonTapped() {
-          // Get the selected date
-          let dateFormatter = DateFormatter()
-          dateFormatter.dateFormat = "dd/MM/yyyy"
-          let selectedDate = dateFormatter.date(from: dateLabel.text ?? "") ?? Date()
-          // Update the date label
-          dateLabel.text = dateFormatter.string(from: selectedDate)
-          
-          // Calculate the number of days from selected date to current date
-          let numberOfDays = numberOfDays(from: selectedDate)
-          // Update the label showing the number of days
-          numberOfDaysLabel.text = "\(numberOfDays) days"
-          
-          // Hide the date picker view
-          datePickerView.isHidden = true
-      }
+//    func numberOfDays(from date: Date) -> Int {
+//          let calendar = Calendar.current
+//          let currentDate = Date()
+//          let startOfDay = calendar.startOfDay(for: date)
+//          let days = calendar.dateComponents([.day], from: startOfDay, to: currentDate)
+//          return days.day ?? 0
+//      }
+//
+//      @objc func okButtonTapped() {
+//          // Get the selected date
+//          let dateFormatter = DateFormatter()
+//          dateFormatter.dateFormat = "dd/MM/yyyy"
+//          let selectedDate = dateFormatter.date(from: dateLabel.text ?? "") ?? Date()
+//          // Update the date label
+//          dateLabel.text = dateFormatter.string(from: selectedDate)
+//
+//          // Calculate the number of days from selected date to current date
+//          let numberOfDays = numberOfDays(from: selectedDate)
+//          // Update the label showing the number of days
+//          numberOfDaysLabel.text = "\(numberOfDays) days"
+//
+//          // Hide the date picker view
+//          datePickerView.isHidden = true
+//      }
     
     @IBAction func selectImageButton(_ sender: Any) {
         let imagePicker = UIImagePickerController()

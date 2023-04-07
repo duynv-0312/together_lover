@@ -38,10 +38,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ThirdTableViewCell",
-                                                 for: indexPath) as! ThirdTableViewCell
-        cell.textSetting?.text = data[indexPath.section]
-        return cell
+      
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
