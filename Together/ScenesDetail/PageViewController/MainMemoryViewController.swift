@@ -98,7 +98,6 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
         zodiacPerson1.text = "Nhân mã"
         zodiacPerson2.text = "Nhân mã"
 
-
 //        heartImage.image = UIImage(named: "heart")//
         datePickerView.layer.cornerRadius = 12
         datePicker.datePickerMode = .date
@@ -114,8 +113,6 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
            }
         }
     }
-    
-    
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         // Hide the date picker view
@@ -171,7 +168,6 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
         let calendar = Calendar.current
         let day = calendar.component(.day, from: date)
         let month = calendar.component(.month, from: date)
-        
         // check zodiac sign based on day and month
         if (month == 1 && day >= 20) || (month == 2 && day <= 18) {
             return "Aquarius"

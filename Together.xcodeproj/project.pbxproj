@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		0410A6E929D6DECC00C0C679 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410A6E829D6DECC00C0C679 /* Date.swift */; };
 		0433FBA829DC78B300F176C0 /* HoroscopeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433FBA729DC78B300F176C0 /* HoroscopeDetailView.swift */; };
+		043C226E29E06A8B009AD721 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C226C29E06A8B009AD721 /* RatingViewController.swift */; };
+		043C226F29E06A8B009AD721 /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043C226D29E06A8B009AD721 /* RatingViewController.xib */; };
+		043C227229E06AB8009AD721 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C227029E06AB8009AD721 /* PrivacyPolicyViewController.swift */; };
+		043C227329E06AB8009AD721 /* PrivacyPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043C227129E06AB8009AD721 /* PrivacyPolicyViewController.xib */; };
+		043C227629E06B77009AD721 /* VersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C227429E06B77009AD721 /* VersionViewController.swift */; };
+		043C227729E06B77009AD721 /* VersionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043C227529E06B77009AD721 /* VersionViewController.xib */; };
 		04E0282129D582730089FA2D /* MemoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0282029D582730089FA2D /* MemoryDetailViewController.swift */; };
 		04E0282929D5D9080089FA2D /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0282829D5D9080089FA2D /* DatePicker.swift */; };
 		04E0282C29D5D9310089FA2D /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E0282B29D5D9310089FA2D /* DatePicker.xib */; };
@@ -28,6 +34,12 @@
 /* Begin PBXFileReference section */
 		0410A6E829D6DECC00C0C679 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		0433FBA729DC78B300F176C0 /* HoroscopeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeDetailView.swift; sourceTree = "<group>"; };
+		043C226C29E06A8B009AD721 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		043C226D29E06A8B009AD721 /* RatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
+		043C227029E06AB8009AD721 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		043C227129E06AB8009AD721 /* PrivacyPolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyViewController.xib; sourceTree = "<group>"; };
+		043C227429E06B77009AD721 /* VersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionViewController.swift; sourceTree = "<group>"; };
+		043C227529E06B77009AD721 /* VersionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VersionViewController.xib; sourceTree = "<group>"; };
 		04E0282029D582730089FA2D /* MemoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDetailViewController.swift; sourceTree = "<group>"; };
 		04E0282829D5D9080089FA2D /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		04E0282B29D5D9310089FA2D /* DatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePicker.xib; sourceTree = "<group>"; };
@@ -93,6 +105,12 @@
 			isa = PBXGroup;
 			children = (
 				04E0283629D5ED4A0089FA2D /* SettingViewController.swift */,
+				043C227429E06B77009AD721 /* VersionViewController.swift */,
+				043C227529E06B77009AD721 /* VersionViewController.xib */,
+				043C227029E06AB8009AD721 /* PrivacyPolicyViewController.swift */,
+				043C227129E06AB8009AD721 /* PrivacyPolicyViewController.xib */,
+				043C226C29E06A8B009AD721 /* RatingViewController.swift */,
+				043C226D29E06A8B009AD721 /* RatingViewController.xib */,
 			);
 			path = SettingViewController;
 			sourceTree = "<group>";
@@ -188,8 +206,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F67D9129D5402D00A25E4A /* LaunchScreen.storyboard in Resources */,
+				043C227729E06B77009AD721 /* VersionViewController.xib in Resources */,
 				04F67D8E29D5402D00A25E4A /* Assets.xcassets in Resources */,
 				04F67D8929D5402C00A25E4A /* Main.storyboard in Resources */,
+				043C226F29E06A8B009AD721 /* RatingViewController.xib in Resources */,
+				043C227329E06AB8009AD721 /* PrivacyPolicyViewController.xib in Resources */,
 				04E0282C29D5D9310089FA2D /* DatePicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,9 +228,12 @@
 				04F67D8229D5402C00A25E4A /* AppDelegate.swift in Sources */,
 				04E0283729D5ED4A0089FA2D /* SettingViewController.swift in Sources */,
 				04F67D8429D5402C00A25E4A /* SceneDelegate.swift in Sources */,
+				043C226E29E06A8B009AD721 /* RatingViewController.swift in Sources */,
 				04E0282129D582730089FA2D /* MemoryDetailViewController.swift in Sources */,
 				04F67D9B29D54DC600A25E4A /* AddMemoryViewController.swift in Sources */,
+				043C227629E06B77009AD721 /* VersionViewController.swift in Sources */,
 				04E0282929D5D9080089FA2D /* DatePicker.swift in Sources */,
+				043C227229E06AB8009AD721 /* PrivacyPolicyViewController.swift in Sources */,
 				04F67D8C29D5402C00A25E4A /* Together.xcdatamodeld in Sources */,
 				04F67D9929D540C200A25E4A /* MainViewController.swift in Sources */,
 				0410A6E929D6DECC00C0C679 /* Date.swift in Sources */,

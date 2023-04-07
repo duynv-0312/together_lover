@@ -11,7 +11,6 @@ final class AddMemoryViewController: UIViewController {
     
     var infoFromVC2: String?
     
-    
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var backgroundImage1: UIImageView!
     @IBOutlet weak var markerView: UIView!
@@ -21,7 +20,6 @@ final class AddMemoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-
     }
     
     private func configView() {
@@ -31,13 +29,11 @@ final class AddMemoryViewController: UIViewController {
         markerImage.layer.cornerRadius = 25
         markerImage.image = UIImage(systemName: "pencil.line")
         markerView.layer.cornerRadius = 25
-        
     }
     
     @IBAction func markerTapped(_ sender: Any) {
         let vc2 = storyboard?.instantiateViewController(withIdentifier: "MemoryDetailViewController") as! MemoryDetailViewController
         vc2.modalPresentationStyle = .fullScreen
         present(vc2, animated: true, completion: nil)
-
     }
 }

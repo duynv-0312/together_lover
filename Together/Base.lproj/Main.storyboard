@@ -321,9 +321,6 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Đóng"/>
-                                <connections>
-                                    <action selector="closeSetting:" destination="YJF-wO-TN9" eventType="touchUpInside" id="1vJ-5I-jHt"/>
-                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zds-UL-GPC">
                                 <rect key="frame" x="0.0" y="87" width="393" height="765"/>
@@ -345,7 +342,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="Zds-UL-GPC" id="3Om-PY-4vo"/>
+                        <outlet property="saveData" destination="Ur8-Mf-lNf" id="KUJ-bT-K66"/>
+                        <outlet property="tableView" destination="Zds-UL-GPC" id="WMq-aR-o4C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erU-vX-mr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
