@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import Localize_Swift
+
+enum PickerType {
+    case loveDay
+    case personOneBirthday
+    case personTwoBirthday
+}
 
 class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let imagePicker = UIImagePickerController()
-
     
     @IBOutlet weak var backgroundImage2: UIImageView!
     
@@ -18,9 +24,9 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var heartImage: UIImageView!
     @IBOutlet weak var personImageView1: UIView!
     @IBOutlet weak var personImageView2: UIView!
+    
     @IBOutlet weak var personImage1: UIImageView!
     @IBOutlet weak var personImage2: UIImageView!
-    
     
     @IBOutlet weak var nameImage1: UIView!
     @IBOutlet weak var nameImage2: UIView!
@@ -63,6 +69,8 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
     var gender2: String = ""
     var dateStr = ""
     
+    private var isSelectImageOne: Bool = true
+    private var pickerType: PickerType = .loveDay
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +96,7 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
         heartView.backgroundColor = .clear
         
         
-        namePerson1.text = "Tôi"
+        namePerson1.text = "home".localized()
         namePerson1.font = .boldSystemFont(ofSize: 20)
         namePerson1.tintColor = .white
         
@@ -96,7 +104,7 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
         namePerson2.font = .boldSystemFont(ofSize: 20)
         namePerson2.tintColor = .white
         
-        zodiacPerson1.text = "Nhân mã"
+        zodiacPerson1.text = UserDefaults.standard.string(forKey: "personOneZodiac")
         zodiacPerson2.text = "Nhân mã"
 
 //        heartImage.image = UIImage(named: "heart")//
@@ -126,23 +134,30 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
          dateFormatter.dateFormat = "dd/MM/yyyy"
          let selectedDate = dateFormatter.string(from: datePicker.date)
          
-         dateLabel.text = selectedDate
+        
          datePickerView.isHidden = true
         
-        let number = Date.dates(from: datePicker.date, to: Date()).count
-        numberOfDaysLabel.text = "\(number)"
+        switch pickerType {
+        case .loveDay:
+            let number = Date.dates(from: datePicker.date, to: Date()).count
+            numberOfDaysLabel.text = "\(number)"
 
-        let selectedDate1 = datePicker.date
-        let (years, months, weeks, days) = calculateTimeSinceSelectedDate(selectedDate1: selectedDate1)
-        yearLabel.text = "\(years)"
-        monthLabel.text = "\(months)"
-        weekLabel.text = "\(weeks)"
-        dayLabel.text = "\(days)"
-        
-        let horoscope = getHoroscopeFromDate(selectedDate)
+            let selectedDate1 = datePicker.date
+            let (years, months, weeks, days) = calculateTimeSinceSelectedDate(selectedDate1: selectedDate1)
+            yearLabel.text = "\(years)"
+            monthLabel.text = "\(months)"
+            weekLabel.text = "\(weeks)"
+            dayLabel.text = "\(days)"
+            dateLabel.text = selectedDate
+        case .personOneBirthday:
+            let horoscope = getHoroscopeFromDate(selectedDate)
 
-               // Hiển thị cung hoàng đạo
-        zodiacPerson1.text = "\(horoscope)"
+                   // Hiển thị cung hoàng đạo
+            zodiacPerson1.text = "\(horoscope)"
+            UserDefaults.standard.set("\(horoscope)", forKey: "personOneZodiac")
+        case .personTwoBirthday:
+            break
+        }
     }
     
     func calculateTimeSinceSelectedDate(selectedDate1: Date) -> (Int, Int, Int, Int) {
@@ -160,6 +175,7 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func selectDateButton(_ sender: Any) {
         datePickerView.isHidden = false
+        pickerType = .loveDay
     }
     
     func numberOfDays(from date: Date) -> Int {
@@ -253,10 +269,12 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
               alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
                   self.openCamera()
+                  self.isSelectImageOne = true
               }))
 
               alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
                   self.openGallery(forImageView: self.personImage1)
+                  self.isSelectImageOne = true
               }))
 
               alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -267,10 +285,12 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
            alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
                self.openCamera()
+               self.isSelectImageOne = false
            }))
 
            alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
                self.openGallery(forImageView: self.personImage2)
+               self.isSelectImageOne = false
            }))
 
            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -294,21 +314,26 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
           imagePicker.sourceType = .photoLibrary
           imagePicker.allowsEditing = true
           present(imagePicker, animated: true, completion: {
-              self.personImage1 = imageView
+//              self.personImage1 = imageView
           })
       }
       
-      func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+      func imagePickerController(_ picker: UIImagePickerController,
+                                 didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
           
           if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-              personImage1.image = nil
-              personImage2.image = nil
-              personImage1.contentMode = .scaleAspectFit
-              personImage2.contentMode = .scaleAspectFit
+//              personImage1.image = nil
+//              personImage2.image = nil
               
-              if personImage1 == self.personImage1 {
+              print("---------")
+              personImage1.contentMode = .scaleAspectFill
+              personImage2.contentMode = .scaleAspectFill
+              
+              if isSelectImageOne {
+                  print("---------1111")
                   personImage1.image = pickedImage
               } else {
+                  print("---------")
                   personImage2.image = pickedImage
               }
           }
@@ -357,9 +382,7 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func changedGender1(_ sender: Any) {
         datePickerView.isHidden = false
-  
-        
-        
+        pickerType = .personOneBirthday
     }
     
 }
@@ -414,43 +437,7 @@ extension UIImage {
         return duration
     }
     
-    func calculateAstrologicalSign(date: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-yyyy"
-        guard let birthDate = dateFormatter.date(from: date) else { return "" }
-        let calendar = Calendar.current
-        let month = calendar.component(.month, from: birthDate)
-        let day = calendar.component(.day, from: birthDate)
-        
-        switch (month, day) {
-        case (3, 21..<32), (4, 1..<20):
-            return "Aries"
-        case (4, 20..<31), (5, 1..<21):
-            return "Taurus"
-        case (5, 21..<32), (6, 1..<21):
-            return "Gemini"
-        case (6, 21..<31), (7, 1..<23):
-            return "Cancer"
-        case (7, 23..<32), (8, 1..<23):
-            return "Leo"
-        case (8, 23..<32), (9, 1..<23):
-            return "Virgo"
-        case (9, 23..<31), (10, 1..<23):
-            return "Libra"
-        case (10, 23..<32), (11, 1..<22):
-            return "Scorpio"
-        case (11, 22..<31), (12, 1..<22):
-            return "Sagittarius"
-        case (12, 22..<32), (1, 1..<20):
-            return "Capricorn"
-        case (1, 20..<32), (2, 1..<19):
-            return "Aquarius"
-        case (2, 19..<30), (3, 1..<21):
-            return "Pisces"
-        default:
-            return ""
-        }
-    }
+  
 }
 
 extension Date {
@@ -466,41 +453,3 @@ extension Date {
         return Calendar.current.component(.year, from: self)
     }
 }
-
-//extension MainMemoryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        if let pickedImage1 = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-//            personImage1.contentMode = .scaleToFill
-//            personImage1.image = pickedImage1
-//        }
-//
-//        if let pickedImage2 = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-//                personImage2.contentMode = .scaleToFill
-//                personImage2.image = pickedImage2
-//
-//        }
-//        dismiss(animated: true, completion: nil)
-//    }
-//
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        dismiss(animated: true, completion: nil)
-//    }
-//}
-
-//extension MainMemoryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        if let image = info[.editedImage] as? UIImage {
-//            picker.dismiss(animated: true, completion: nil)
-//            // Hiển thị ảnh được chọn lên imageView tương ứng
-//            if picker.sourceType == .camera {
-//                personImage1.image = image
-//            } else {
-//                personImage2.image = image
-//            }
-//        }
-//    }
-//
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        picker.dismiss(animated: true, completion: nil)
-//    }
-//}

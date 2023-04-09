@@ -15,6 +15,11 @@
 		043C227329E06AB8009AD721 /* PrivacyPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043C227129E06AB8009AD721 /* PrivacyPolicyViewController.xib */; };
 		043C227629E06B77009AD721 /* VersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C227429E06B77009AD721 /* VersionViewController.swift */; };
 		043C227729E06B77009AD721 /* VersionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043C227529E06B77009AD721 /* VersionViewController.xib */; };
+		04791D9729E2A63900B9E032 /* MemoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04791D9629E2A63900B9E032 /* MemoryEntity.swift */; };
+		04791D9C29E2A6F000B9E032 /* MemoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04791D9A29E2A6F000B9E032 /* MemoryTableViewCell.swift */; };
+		04791D9D29E2A6F000B9E032 /* MemoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04791D9B29E2A6F000B9E032 /* MemoryTableViewCell.xib */; };
+		04791DA229E2ADD100B9E032 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04791DA429E2ADD100B9E032 /* Localizable.strings */; };
+		04791DA829E2AE5500B9E032 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 04791DA729E2AE5500B9E032 /* Localize_Swift */; };
 		04E0282129D582730089FA2D /* MemoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0282029D582730089FA2D /* MemoryDetailViewController.swift */; };
 		04E0282929D5D9080089FA2D /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0282829D5D9080089FA2D /* DatePicker.swift */; };
 		04E0282C29D5D9310089FA2D /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E0282B29D5D9310089FA2D /* DatePicker.xib */; };
@@ -40,6 +45,11 @@
 		043C227129E06AB8009AD721 /* PrivacyPolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyViewController.xib; sourceTree = "<group>"; };
 		043C227429E06B77009AD721 /* VersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionViewController.swift; sourceTree = "<group>"; };
 		043C227529E06B77009AD721 /* VersionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VersionViewController.xib; sourceTree = "<group>"; };
+		04791D9629E2A63900B9E032 /* MemoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryEntity.swift; sourceTree = "<group>"; };
+		04791D9A29E2A6F000B9E032 /* MemoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTableViewCell.swift; sourceTree = "<group>"; };
+		04791D9B29E2A6F000B9E032 /* MemoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoryTableViewCell.xib; sourceTree = "<group>"; };
+		04791DA329E2ADD100B9E032 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04791DA529E2ADE600B9E032 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		04E0282029D582730089FA2D /* MemoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDetailViewController.swift; sourceTree = "<group>"; };
 		04E0282829D5D9080089FA2D /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		04E0282B29D5D9310089FA2D /* DatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePicker.xib; sourceTree = "<group>"; };
@@ -63,12 +73,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04791DA829E2AE5500B9E032 /* Localize_Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04791D9529E2A4AE00B9E032 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				04F67D8A29D5402C00A25E4A /* Together.xcdatamodeld */,
+				04791D9629E2A63900B9E032 /* MemoryEntity.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		04791D9829E2A6D000B9E032 /* AddMemory */ = {
+			isa = PBXGroup;
+			children = (
+				04791D9929E2A6DA00B9E032 /* Cells */,
+				04F67D9A29D54DC600A25E4A /* AddMemoryViewController.swift */,
+			);
+			path = AddMemory;
+			sourceTree = "<group>";
+		};
+		04791D9929E2A6DA00B9E032 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				04791D9A29E2A6F000B9E032 /* MemoryTableViewCell.swift */,
+				04791D9B29E2A6F000B9E032 /* MemoryTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		04791D9E29E2AD4700B9E032 /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				04F67D8D29D5402D00A25E4A /* Assets.xcassets */,
+				04791DA429E2ADD100B9E032 /* Localizable.strings */,
+			);
+			path = Resouces;
+			sourceTree = "<group>";
+		};
 		04E0281F29D582170089FA2D /* ScenesDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,8 +139,8 @@
 		04E0282D29D5E8740089FA2D /* PageViewController */ = {
 			isa = PBXGroup;
 			children = (
+				04791D9829E2A6D000B9E032 /* AddMemory */,
 				04F67D9829D540C200A25E4A /* MainViewController.swift */,
-				04F67D9A29D54DC600A25E4A /* AddMemoryViewController.swift */,
 				04F67D9C29D54DE200A25E4A /* MainMemoryViewController.swift */,
 				04F67D9E29D54E1200A25E4A /* ZodiacViewController.swift */,
 				0433FBA729DC78B300F176C0 /* HoroscopeDetailView.swift */,
@@ -135,14 +182,14 @@
 		04F67D8029D5402C00A25E4A /* Together */ = {
 			isa = PBXGroup;
 			children = (
+				04791D9E29E2AD4700B9E032 /* Resouces */,
 				04F67D8129D5402C00A25E4A /* AppDelegate.swift */,
 				04F67D8329D5402C00A25E4A /* SceneDelegate.swift */,
+				04791D9529E2A4AE00B9E032 /* Data */,
 				04E0281F29D582170089FA2D /* ScenesDetail */,
 				04F67D8729D5402C00A25E4A /* Main.storyboard */,
-				04F67D8D29D5402D00A25E4A /* Assets.xcassets */,
 				04F67D8F29D5402D00A25E4A /* LaunchScreen.storyboard */,
 				04F67D9229D5402D00A25E4A /* Info.plist */,
-				04F67D8A29D5402C00A25E4A /* Together.xcdatamodeld */,
 			);
 			path = Together;
 			sourceTree = "<group>";
@@ -163,6 +210,9 @@
 			dependencies = (
 			);
 			name = Together;
+			packageProductDependencies = (
+				04791DA729E2AE5500B9E032 /* Localize_Swift */,
+			);
 			productName = Together;
 			productReference = 04F67D7E29D5402C00A25E4A /* Together.app */;
 			productType = "com.apple.product-type.application";
@@ -189,8 +239,12 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 04F67D7529D5402C00A25E4A;
+			packageReferences = (
+				04791DA629E2AE5500B9E032 /* XCRemoteSwiftPackageReference "Localize-Swift" */,
+			);
 			productRefGroup = 04F67D7F29D5402C00A25E4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -209,6 +263,8 @@
 				043C227729E06B77009AD721 /* VersionViewController.xib in Resources */,
 				04F67D8E29D5402D00A25E4A /* Assets.xcassets in Resources */,
 				04F67D8929D5402C00A25E4A /* Main.storyboard in Resources */,
+				04791DA229E2ADD100B9E032 /* Localizable.strings in Resources */,
+				04791D9D29E2A6F000B9E032 /* MemoryTableViewCell.xib in Resources */,
 				043C226F29E06A8B009AD721 /* RatingViewController.xib in Resources */,
 				043C227329E06AB8009AD721 /* PrivacyPolicyViewController.xib in Resources */,
 				04E0282C29D5D9310089FA2D /* DatePicker.xib in Resources */,
@@ -225,9 +281,11 @@
 				0433FBA829DC78B300F176C0 /* HoroscopeDetailView.swift in Sources */,
 				04F67D9D29D54DE200A25E4A /* MainMemoryViewController.swift in Sources */,
 				04F67D9F29D54E1200A25E4A /* ZodiacViewController.swift in Sources */,
+				04791D9729E2A63900B9E032 /* MemoryEntity.swift in Sources */,
 				04F67D8229D5402C00A25E4A /* AppDelegate.swift in Sources */,
 				04E0283729D5ED4A0089FA2D /* SettingViewController.swift in Sources */,
 				04F67D8429D5402C00A25E4A /* SceneDelegate.swift in Sources */,
+				04791D9C29E2A6F000B9E032 /* MemoryTableViewCell.swift in Sources */,
 				043C226E29E06A8B009AD721 /* RatingViewController.swift in Sources */,
 				04E0282129D582730089FA2D /* MemoryDetailViewController.swift in Sources */,
 				04F67D9B29D54DC600A25E4A /* AddMemoryViewController.swift in Sources */,
@@ -243,6 +301,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		04791DA429E2ADD100B9E032 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04791DA329E2ADD100B9E032 /* en */,
+				04791DA529E2ADE600B9E032 /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		04F67D8729D5402C00A25E4A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -266,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -326,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -454,6 +523,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04791DA629E2AE5500B9E032 /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Localize-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04791DA729E2AE5500B9E032 /* Localize_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04791DA629E2AE5500B9E032 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
+			productName = Localize_Swift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		04F67D8A29D5402C00A25E4A /* Together.xcdatamodeld */ = {

@@ -22,7 +22,10 @@ class SettingViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+    }
+    
+    @IBAction func saveDataTapped(_ sender: Any) {
+        self.dismiss(animated: true)
     }
 }
 
@@ -48,7 +51,9 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource  {
           switch indexPath.section {
           case 0:
               // Hiển thị alert cho người dùng chọn ngôn ngữ
-                    let alert = UIAlertController(title: "Chọn ngôn ngữ", message: "Chọn ngôn ngữ mà bạn muốn sử dụng trong ứng dụng", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Chọn ngôn ngữ",
+                                                  message: "Chọn ngôn ngữ mà bạn muốn sử dụng trong ứng dụng",
+                                                  preferredStyle: .alert)
                     let actionTiengViet = UIAlertAction(title: "Tiếng Việt", style: .default) { (_) in
                         // Lưu ngôn ngữ là tiếng Việt
                         UserDefaults.standard.set("vi", forKey: "language")
@@ -104,4 +109,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource  {
               break
           }
       }
+    
+    
+    
   }

@@ -1,0 +1,204 @@
+
+/* Class = "UILabel"; text = "Chọn ngày :"; ObjectID = "0by-2n-9PP"; */
+"0by-2n-9PP.text" = "Chọn ngày :";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1m3-WC-hJe"; */
+"1m3-WC-hJe.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "4Rc-od-uFM"; */
+"4Rc-od-uFM.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "5sP-AP-Gyd"; */
+"5sP-AP-Gyd.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Chọn ảnh :"; ObjectID = "6fE-vv-7bV"; */
+"6fE-vv-7bV.text" = "Chọn ảnh :";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6oy-LY-8W2"; */
+"6oy-LY-8W2.text" = "Label";
+
+/* Class = "UILabel"; text = "Thêm kỉ niệm"; ObjectID = "ADW-9q-pZU"; */
+"ADW-9q-pZU.text" = "Thêm kỉ niệm";
+
+/* Class = "UILabel"; text = "Năm"; ObjectID = "ANm-yc-eT2"; */
+"ANm-yc-eT2.text" = "Năm";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Bup-87-929"; */
+"Bup-87-929.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Kỉ niệm nhập ở đây ..."; ObjectID = "Ci7-0n-0Ql"; */
+"Ci7-0n-0Ql.placeholder" = "Kỉ niệm nhập ở đây ...";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Cpl-mQ-CsV"; */
+"Cpl-mQ-CsV.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "EIg-Sf-0Mq"; */
+"EIg-Sf-0Mq.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "FTI-VI-gkN"; */
+"FTI-VI-gkN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Ngày sinh"; ObjectID = "H0h-Mf-7yo"; */
+"H0h-Mf-7yo.text" = "Ngày sinh";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HOD-mS-h1q"; */
+"HOD-mS-h1q.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "IcC-h2-Odd"; */
+"IcC-h2-Odd.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "J4K-Zr-ygc"; */
+"J4K-Zr-ygc.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Begin"; ObjectID = "Jea-Ks-ziq"; */
+"Jea-Ks-ziq.text" = "Begin";
+
+/* Class = "UIButton"; configuration.title = "Close"; ObjectID = "KxM-aE-1ek"; */
+"KxM-aE-1ek.configuration.title" = "Close";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KxM-aE-1ek"; */
+"KxM-aE-1ek.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Lei-Ql-wDL"; */
+"Lei-Ql-wDL.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "MHD-cY-8XY"; */
+"MHD-cY-8XY.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "McC-d8-2RD"; */
+"McC-d8-2RD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Đang yêu"; ObjectID = "NkR-Ir-9sY"; */
+"NkR-Ir-9sY.text" = "Đang yêu";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "O8F-eV-Gea"; */
+"O8F-eV-Gea.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Lưu"; ObjectID = "Pwy-jc-N34"; */
+"Pwy-jc-N34.configuration.title" = "Lưu";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Pwy-jc-N34"; */
+"Pwy-jc-N34.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "R6T-Py-CSv"; */
+"R6T-Py-CSv.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Đóng"; ObjectID = "Ur8-Mf-lNf"; */
+"Ur8-Mf-lNf.configuration.title" = "Đóng";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ur8-Mf-lNf"; */
+"Ur8-Mf-lNf.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Đóng"; ObjectID = "XzM-xY-CIT"; */
+"XzM-xY-CIT.configuration.title" = "Đóng";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XzM-xY-CIT"; */
+"XzM-xY-CIT.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Cài đặt"; ObjectID = "YJr-P3-YfL"; */
+"YJr-P3-YfL.text" = "Cài đặt";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YmH-FQ-E6T"; */
+"YmH-FQ-E6T.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Ngày"; ObjectID = "Yyy-ek-ZLQ"; */
+"Yyy-ek-ZLQ.text" = "Ngày";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "ZoI-uO-BO2"; */
+"ZoI-uO-BO2.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ZxK-kA-kka"; */
+"ZxK-kA-kka.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "coU-VT-XBC"; */
+"coU-VT-XBC.text" = "0";
+
+/* Class = "UILabel"; text = "ngày"; ObjectID = "e0N-ew-hWe"; */
+"e0N-ew-hWe.text" = "ngày";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "eBo-cD-cIM"; */
+"eBo-cD-cIM.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "eQX-4s-aZg"; */
+"eQX-4s-aZg.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "edV-Ov-tzM"; */
+"edV-Ov-tzM.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "eez-hj-ogj"; */
+"eez-hj-ogj.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Huỷ"; ObjectID = "fZz-Ua-jIG"; */
+"fZz-Ua-jIG.configuration.title" = "Huỷ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fZz-Ua-jIG"; */
+"fZz-Ua-jIG.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gKC-wf-WIN"; */
+"gKC-wf-WIN.text" = "Label";
+
+/* Class = "UIButton"; configuration.title = "Ok"; ObjectID = "gc1-kf-19h"; */
+"gc1-kf-19h.configuration.title" = "Ok";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gc1-kf-19h"; */
+"gc1-kf-19h.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hQw-ba-TE2"; */
+"hQw-ba-TE2.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Cung Hoàng Đạo"; ObjectID = "k1t-2B-ODM"; */
+"k1t-2B-ODM.text" = "Cung Hoàng Đạo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "nBM-yv-XOd"; */
+"nBM-yv-XOd.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Ngày sinh"; ObjectID = "nt8-NP-uPn"; */
+"nt8-NP-uPn.text" = "Ngày sinh";
+
+/* Class = "UIButton"; configuration.title = "OK"; ObjectID = "ojp-LH-C8M"; */
+"ojp-LH-C8M.configuration.title" = "OK";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ojp-LH-C8M"; */
+"ojp-LH-C8M.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Tháng"; ObjectID = "s0z-se-Yqm"; */
+"s0z-se-Yqm.text" = "Tháng";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "szL-GZ-edf"; */
+"szL-GZ-edf.text" = "Label";
+
+/* Class = "UILabel"; text = "Ngày"; ObjectID = "t3n-xU-w3N"; */
+"t3n-xU-w3N.text" = "Ngày";
+
+/* Class = "UILabel"; text = "Cung hoàng đạo"; ObjectID = "uAB-10-QjU"; */
+"uAB-10-QjU.text" = "Cung hoàng đạo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "uVU-Bc-zrr"; */
+"uVU-Bc-zrr.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Tuần"; ObjectID = "w6W-hN-LGs"; */
+"w6W-hN-LGs.text" = "Tuần";
+
+/* Class = "UILabel"; text = "Love Together"; ObjectID = "wRA-Qz-t1W"; */
+"wRA-Qz-t1W.text" = "Love Together";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wu2-ea-crv"; */
+"wu2-ea-crv.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "xCi-Kt-4zx"; */
+"xCi-Kt-4zx.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "xO9-AG-aGx"; */
+"xO9-AG-aGx.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Huỷ"; ObjectID = "ysk-aA-W70"; */
+"ysk-aA-W70.configuration.title" = "Huỷ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ysk-aA-W70"; */
+"ysk-aA-W70.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "1/1/2023"; ObjectID = "zOd-lb-2Ax"; */
+"zOd-lb-2Ax.text" = "1/1/2023";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "zd8-rn-Odb"; */
+"zd8-rn-Odb.normalTitle" = "Button";
