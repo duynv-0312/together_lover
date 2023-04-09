@@ -61,6 +61,7 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
     var name2: String = ""
     var gender1: String = ""
     var gender2: String = ""
+    var dateStr = ""
     
     
     override func viewDidLoad() {
@@ -137,6 +138,11 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
         monthLabel.text = "\(months)"
         weekLabel.text = "\(weeks)"
         dayLabel.text = "\(days)"
+        
+        let horoscope = getHoroscopeFromDate(selectedDate)
+
+               // Hiển thị cung hoàng đạo
+        zodiacPerson1.text = "\(horoscope)"
     }
     
     func calculateTimeSinceSelectedDate(selectedDate1: Date) -> (Int, Int, Int, Int) {
@@ -164,35 +170,43 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
           return days.day ?? 0
       }
     
-    func calculateZodiac(date: Date) -> String {
-        let calendar = Calendar.current
-        let day = calendar.component(.day, from: date)
+    func getHoroscopeFromDate(_ dateStr: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        guard let date = dateFormatter.date(from: dateStr) else {
+            return ""
+        }
+
+        let calendar = Calendar(identifier: .gregorian)
         let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
         // check zodiac sign based on day and month
-        if (month == 1 && day >= 20) || (month == 2 && day <= 18) {
-            return "Aquarius"
-        } else if (month == 2 && day >= 19) || (month == 3 && day <= 20) {
-            return "Pisces"
-        } else if (month == 3 && day >= 21) || (month == 4 && day <= 19) {
-            return "Aries"
-        } else if (month == 4 && day >= 20) || (month == 5 && day <= 20) {
-            return "Taurus"
-        } else if (month == 5 && day >= 21) || (month == 6 && day <= 21) {
-            return "Gemini"
-        } else if (month == 6 && day >= 22) || (month == 7 && day <= 22) {
-            return "Cancer"
-        } else if (month == 7 && day >= 23) || (month == 8 && day <= 22) {
-            return "Leo"
-        } else if (month == 8 && day >= 23) || (month == 9 && day <= 22) {
-            return "Virgo"
-        } else if (month == 9 && day >= 23) || (month == 10 && day <= 22) {
-            return "Libra"
-        } else if (month == 10 && day >= 23) || (month == 11 && day <= 21) {
-            return "Scorpio"
-        } else if (month == 11 && day >= 22) || (month == 12 && day <= 21) {
-            return "Sagittarius"
+        if month == 1 && day >= 20 || month == 2 && day <= 18 {
+            return "Bảo Bình"
+        } else if month == 2 && day >= 19 || month == 3 && day <= 20 {
+            return "Song Ngư"
+        } else if month == 3 && day >= 21 || month == 4 && day <= 19 {
+            return "Bạch Dương"
+        } else if month == 4 && day >= 20 || month == 5 && day <= 20 {
+            return "Kim Ngưu"
+        } else if month == 5 && day >= 21 || month == 6 && day <= 20 {
+            return "Song Tử"
+        } else if month == 6 && day >= 21 || month == 7 && day <= 22 {
+            return "Cự Giải"
+        } else if month == 7 && day >= 23 || month == 8 && day <= 22 {
+            return "Sư Tử"
+        } else if month == 8 && day >= 23 || month == 9 && day <= 22 {
+            return "Xử Nữ"
+        } else if month == 9 && day >= 23 || month == 10 && day <= 22 {
+            return "Thiên Bình"
+        } else if month == 10 && day >= 23 || month == 11 && day <= 21 {
+            return "Bọ Cạp"
+        } else if month == 11 && day >= 22 || month == 12 && day <= 21 {
+            return "Nhân Mã"
+        } else if month == 12 && day >= 22 || month == 12 && day <= 31 || month == 1 && day <= 19 {
+            return "Ma Kết"
         } else {
-            return "Capricorn"
+            return ""
         }
     }
       
@@ -343,6 +357,9 @@ class MainMemoryViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func changedGender1(_ sender: Any) {
         datePickerView.isHidden = false
+  
+        
+        
     }
     
 }
@@ -436,6 +453,19 @@ extension UIImage {
     }
 }
 
+extension Date {
+    var day: Int {
+        return Calendar.current.component(.day, from: self)
+    }
+    
+    var month: Int {
+        return Calendar.current.component(.month, from: self)
+    }
+    
+    var year: Int {
+        return Calendar.current.component(.year, from: self)
+    }
+}
 
 //extension MainMemoryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
